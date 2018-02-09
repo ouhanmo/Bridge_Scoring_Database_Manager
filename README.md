@@ -19,7 +19,7 @@ Then the deal can be kept as:
 S,3NT,1,+1
 ```
 The third attribute is the number of doubles of the contract.
-The following are also accepted as equivilent to the above:
+The following are also accepted as equivalent to the above:
 ```
 s,3NT,1,+1
 S,3nt,1,+1
@@ -30,4 +30,4 @@ S,3NT,1,1
 Make sure the deals are listed in order!
 
 
-
+-u
