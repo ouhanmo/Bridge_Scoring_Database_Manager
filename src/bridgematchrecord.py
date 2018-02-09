@@ -34,7 +34,6 @@ class BridgeMatchRec:
         print "---------------------------------------------------------"
         for rec in self.games:
             print rec
-        print
     def printTotal(self):
         print " Total Score "
         print "-------------"
