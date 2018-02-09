@@ -6,7 +6,7 @@ Scoring of each deal and total score is calculated automatically.
 
 ## Run 
 ```
-python scorekeeper.py
+./bsk
 ```
 
 ## How to Create A File
