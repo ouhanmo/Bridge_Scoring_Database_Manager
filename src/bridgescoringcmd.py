@@ -1,7 +1,7 @@
 import os.path
 from bridgematchrecord import BridgeMatchRec as BMRec
 
-current_match = []
+current_match = [None]
 class Read:
     def exe(self):
         filename = raw_input("Enter CSV File Name :")
@@ -9,33 +9,43 @@ class Read:
         if not os.path.isfile(filename):
             print "ERROR: File Does Not Exist!"
             return False
-        current_match.append(BMRec(filename))
-        if not current_match[-1].done:
-            current_match.pop()
+        current_match[0] = BMRec(filename)
+        if not current_match[0].done:
+            current_match[0] = None
         else :
-            print "Successfully Read File."
+            print "File Successfully Read."
         return False
 
 class Print:
     def exe(self):
-        if len(current_match) == 0 :
+        if current_match[0] is None :
             print "ERROR: Current Match is empty..."
         else :
-            print
-            current_match[-1].printRecord()
+            current_match[0].printRecord()
         return False
 
 class Stats:
     def exe(self):
-        if len(current_match) == 0 :
+        if current_match[0] is None:
             print "ERROR: Current Match is empty..."
         else :
-            print
-            current_match[-1].printTotal()
+            current_match[0].printTotal()
         return False
 
+class Write():
+    def exe(self):
+        if current_match[0] is None:
+            print "ERROR: Current Match is empty..."
+        else :
+            filename = raw_input("Enter Output File Name :")
+            filename = filename.strip()
+            current_match[0].write(filename)
+        return False
 cmd_dict = {
 "read" : Read(),
 "print" : Print(),
 "stats" : Stats(),
+"write" : Write(),
 }
+def bridgeScoreInit():
+    pass

@@ -6,7 +6,7 @@ class BridgeMatchRec:
         self.games = []
         self.total = 0
         with open(filename) as file:
-            dealcount=0
+            dealcount = 0
             reader = csv.reader(file)
             for row in reader:
                 dealcount = dealcount+1
@@ -29,6 +29,7 @@ class BridgeMatchRec:
                 self.games.append(BRec(dealcount,row[0],row[1],int(row[2]),int(row[3])))
                 self.total = self.total + self.games[-1].score
             self.done = True
+        file.close()
     def printRecord(self):
         print "No. Deal.  Vul.  Decl.  Con. Penalty   Re.    N-S     E-W"
         print "---------------------------------------------------------"
@@ -39,6 +40,13 @@ class BridgeMatchRec:
         print "-------------"
         print "N-S:   %+d"%self.total
         print "E-W:   %+d"%-self.total
+    def write(self,filename):
+        with open(filename,"w") as file :
+            file.write("No. Deal.  Vul.  Decl.  Con. Penalty   Re.    N-S     E-W\n")
+            file.write("---------------------------------------------------------\n")
+            for rec in self.games:
+                file.write(str(rec)+"\n")
+        file.close()
 def checkint(s,up,low):
     try :
         d = int(s)
