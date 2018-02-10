@@ -7,7 +7,7 @@ class BridgeMatchRec:
         self.games = []
         self.total = 0
         self.file = filename
-        with open(filename) as file:
+        with open("records/"+filename) as file:
             dealcount = 0
             reader = csv.reader(file)
             for row in reader:

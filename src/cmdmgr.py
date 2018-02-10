@@ -3,8 +3,8 @@ class CmdMgr :
         self.prompt = "BSK> "
         self.cmd_dict = cd
     def run(self,func):
-        self.start()
         func()
+        self.start()
         while self.read() == False :
             print
     def read(self):
@@ -19,6 +19,6 @@ class CmdMgr :
             return False
     def start(self):
         print "Bridge Scoring Keeper"
-        print "Version 2.1"
+        print "Version 2.2"
         print "Enter `Help` For Assistance"
         print "==========================="

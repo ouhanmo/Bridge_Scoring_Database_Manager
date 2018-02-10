@@ -1,9 +1,18 @@
-# BRIDGE SCORE KEEPER Version 2.1
+# BRIDGE SCORING DATABASE MANAGER Version 2.2
 
 
 ## Usage
+A database manager to keep contract bridge records.<br>
 Read csv files used to keep bridge scoring records.<br>
 Scoring of each deal and total score is calculated automatically.
+
+### Update Version 2.2 :
+Allows users to save work and load it automatically next time the user runs the program.
+Commands added :
+<ul>
+<li>Clear</li>
+<li>Save</li>
+</ul>
 
 ### Update Version 2.1 :
 Basic database commands added:<br>
@@ -23,6 +32,7 @@ Users are allowed to use the program as a score counting tool.<br>
 ```
 ./bsk
 ```
+Please put the record files in the "records" directory.
 
 ## How to Create A File
 Writing a record file is very easy! <br>
