@@ -1,8 +1,23 @@
-# BRIDGE SCORE KEEPER Version 1.0
+# BRIDGE SCORE KEEPER Version 2.1
+
 
 ## Usage
 Read csv files used to keep bridge scoring records.<br>
 Scoring of each deal and total score is calculated automatically.
+
+### Update Version 2.1 :
+Basic database commands added:<br>
+<ul>
+<li>Delete</li>
+<li>Switch</li>
+</ul>
+Program is now able to keep multiple records.<br>
+CSV error processing bug fixed.
+
+### Update Version 2.0 :
+Command Line added.<br>
+Write function added.<br>
+Users are allowed to use the program as a score counting tool.<br>
 
 ## Run 
 ```

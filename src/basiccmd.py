@@ -2,10 +2,15 @@ class Help():
     def exe(self):
         print "The program supports the following commands:"
         print "--------------------------------------------"
-        print "Read: Read a File"
-        print "Write: Write the scoring table to a file"
-        print "Print: Print the scoring of the current file"
-        print "Stats: Print the total score"
+        print "Delete: Delete a match from database"
+        print "Exit  : Exit program"
+        print "Help  : List commands and usage"
+        print "List  : List all matches in database"
+        print "Print : Print the scoring of the current match"
+        print "Read  : Read a file to database (becomes current match)"
+        print "Stats : Print the total score of current match"
+        print "Switch: Change current match to a match in database"
+        print "Write : Write the scoring table to a file"
         return False
 class Exit():
     def exe(self):

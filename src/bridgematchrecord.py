@@ -1,10 +1,12 @@
 import bridgedef as bd
 from bridgerecord import BridgeRecord as BRec
 import csv
+import util as ut
 class BridgeMatchRec:
     def __init__(self,filename):
         self.games = []
         self.total = 0
+        self.file = filename
         with open(filename) as file:
             dealcount = 0
             reader = csv.reader(file)
@@ -14,15 +16,19 @@ class BridgeMatchRec:
                     print "ERROR: Line %d" % dealcount
                     self.done = False
                     return
+                if len(row[1]) < 2:
+                    print "ERROR: Line %d" % dealcount
+                    self.done = False
+                    return
                 if not row[0] in bd.pos_dict or not row [1][1] in bd.suit_dict:
                     print "ERROR: Line %d" % dealcount
                     self.done = False
                     return
-                if not checkint(row[1][0],7,1):
+                if not ut.checkint(row[1][0],7,1):
                     print "ERROR: Line %d" % dealcount
                     self.done = False
                     return
-                if not checkint(row[2],2,0) or not checkint(row[3],7-int(row[1][0]),-6-int(row[1][0])):
+                if not ut.checkint(row[2],2,0) or not ut.checkint(row[3],7-int(row[1][0]),-6-int(row[1][0])):
                     print "ERROR: Line %d" % dealcount
                     self.done = False
                     return
@@ -46,14 +52,5 @@ class BridgeMatchRec:
             file.write("---------------------------------------------------------\n")
             for rec in self.games:
                 file.write(str(rec)+"\n")
+            file.write("\nProgram Output by Hanmo Ou")
         file.close()
-def checkint(s,up,low):
-    try :
-        d = int(s)
-        if d > up:
-            return False
-        if d < low :
-            return False
-        return True
-    except ValueError:
-        return False

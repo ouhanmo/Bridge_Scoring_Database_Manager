@@ -19,6 +19,6 @@ class CmdMgr :
             return False
     def start(self):
         print "Bridge Scoring Keeper"
-        print "Version 2.0"
+        print "Version 2.1"
         print "Enter `Help` For Assistance"
         print "==========================="
