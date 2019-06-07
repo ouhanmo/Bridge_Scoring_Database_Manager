@@ -1,5 +1,5 @@
 # BRIDGE SCORING DATABASE MANAGER Version 2.2
-
+My First Python Project To Learn Python
 
 ## Usage
 A database manager to keep contract bridge records.<br>
